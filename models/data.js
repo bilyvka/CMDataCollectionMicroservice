@@ -9,8 +9,9 @@ var dataSchema = new Schema({
     clientId:String,
     modelId:String,
     timestamp:{ type : Date, default: Date.now },
-    data:[]
-
+    data:Object, //{original data
+    vector:Object, //vector representation
+    isExample:Boolean //is it base vectors for MVSM
 });
 
-module.exports = mongoose.model('data', dataSchema);
+module.exports = mongoose.model('Data', dataSchema);
